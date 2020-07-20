@@ -1,0 +1,784 @@
+<style type="text/css">
+
+    .ancalc {
+        text-align:center;
+    }
+    .ancalc table {
+        margin-right:auto;
+        margin-left:auto;
+        width:600px;
+        border-collapse:collapse;
+        empty-cells:show;
+        background-color:rgb(233,232,244);
+    }
+    .ancalc th.top {
+        padding:0 0px 0 0px;
+        empty-cells:show;
+        background-color:rgb(175,175,175);
+        color:rgb(255,255,255);
+        font-weight:bold;
+        font-size:120% !important;
+    }
+    .ancalc th {
+        height:3em;
+        border:solid 2px rgb(245,245,245);
+        background-color:rgb(225,225,225);
+        text-align:inherit;
+        color:rgb(80,80,80);
+        font-weight:bold;
+        font-size:100% !important;
+        font-size:90%;
+    }
+    .ancalc .head {
+        height:3em;
+        border:solid 2px rgb(245,245,245);
+        background-color:#CCF;
+        text-align:inherit;
+        color:rgb(80,80,80);
+        font-weight:bold;
+        font-size:100% !important;
+        font-size:90%;
+    }
+    .ancalc td {
+        border:solid 2px rgb(245,245,245);
+        background-color:#FFF;
+        text-align:left;
+    }
+    .ancalc input.output {
+        border:solid 0px rgb(245,245,245);
+        background-color:#FFF;
+    }
+    </style>
+    <script language="JavaScript" type="text/javascript">
+    
+    
+    function calc(weight, minutes, scalefactor)
+    {
+    calories=(Math.round(weight * minutes * scalefactor));
+    return calories;
+    }
+    function compute(form)
+    {
+    var w=form.weight.value * 1
+    var m=form.minutes.value * 1
+    form.aero1.value        = calc(w,m,0.044)
+    form.aero2.value        = calc(w,m,0.056)
+    form.aero3.value        = calc(w,m,0.032)
+    form.aero4.value        = calc(w,m,0.056)
+    form.aero5.value        = calc(w,m,0.080)
+    form.cycle1.value       = calc(w,m,0.056)
+    form.cycle2.value       = calc(w,m,0.084)
+    form.circuit.value      = calc(w,m,0.064)
+    form.row1.value         = calc(w,m,0.056)
+    form.row2.value         = calc(w,m,0.068)
+    form.ski1.value         = calc(w,m,0.076)
+    form.stair1.value       = calc(w,m,0.048)
+    form.weight1.value      = calc(w,m,0.024)
+    form.weight2.value      = calc(w,m,0.048)
+    form.basket1.value      = calc(w,m,0.064)
+    form.basket2.value      = calc(w,m,0.052)
+    form.cycle3.value       = calc(w,m,0.068)
+    form.cycle4.value       = calc(w,m,0.064)
+    form.cycle5.value       = calc(w,m,0.080)
+    form.box1.value         = calc(w,m,0.072)
+    form.foot1.value        = calc(w,m,0.072)
+    form.foot2.value        = calc(w,m,0.064)
+    form.frisbee.value      = calc(w,m,0.024)
+    form.golf1.value        = calc(w,m,0.044)
+    form.golf2.value        = calc(w,m,0.028)
+    form.gymnast.value      = calc(w,m,0.032)
+    form.hball.value        = calc(w,m,0.096)
+    form.hike.value         = calc(w,m,0.048)
+    form.horse.value        = calc(w,m,0.032)
+    form.ice1.value         = calc(w,m,0.056)
+    form.martial.value      = calc(w,m,0.080)
+    form.rball1.value       = calc(w,m,0.080)
+    form.rball2.value       = calc(w,m,0.056)
+    form.climb1.value       = calc(w,m,0.088)
+    form.climb2.value       = calc(w,m,0.064)
+    form.roller1.value      = calc(w,m,0.056)
+    form.rope.value         = calc(w,m,0.080)
+    form.run1.value         = calc(w,m,0.064)
+    form.run2.value         = calc(w,m,0.072)
+    form.run3.value         = calc(w,m,0.080)
+    form.run4.value         = calc(w,m,0.088)
+    form.run5.value         = calc(w,m,0.100)
+    form.run6.value         = calc(w,m,0.116)
+    form.run7.value         = calc(w,m,0.132)
+    form.run8.value         = calc(w,m,0.064)
+    form.run9.value         = calc(w,m,0.072)
+    form.ski2.value         = calc(w,m,0.064)
+    form.ski3.value         = calc(w,m,0.048)
+    form.snshoe.value       = calc(w,m,0.064)
+    form.softball.value     = calc(w,m,0.040)
+    form.swim1.value        = calc(w,m,0.048)
+    form.tennis1.value      = calc(w,m,0.056)
+    form.volley1.value      = calc(w,m,0.024)
+    form.volley2.value      = calc(w,m,0.032)
+    form.volley3.value      = calc(w,m,0.064)
+    form.walk1.value        = calc(w,m,0.032)
+    form.walk2.value        = calc(w,m,0.036)
+    form.walk3.value        = calc(w,m,0.040)
+    form.walk4.value        = calc(w,m,0.048)
+    form.ski4.value         = calc(w,m,0.048)
+    form.polo.value         = calc(w,m,0.080)
+    form.whitewater.value   = calc(w,m,0.040)
+    form.wood.value         = calc(w,m,0.048)
+    form.garden.value       = calc(w,m,0.036)
+    form.clean.value        = calc(w,m,0.028)
+    form.mow1.value         = calc(w,m,0.044)
+    form.mow2.value         = calc(w,m,0.036)
+    form.snow1.value        = calc(w,m,0.036)
+    form.games.value        = calc(w,m,0.040)
+    form.lawn.value         = calc(w,m,0.032)
+    form.sex.value          = calc(w,m,0.012)
+    form.snow2.value        = calc(w,m,0.048)
+    }
+    function clearvalues(form)
+    {
+    form.weight.value   = ""
+    form.minutes.value  = ""
+    form.aero1.value        = ""
+    form.aero2.value        = ""
+    form.aero3.value        = ""
+    form.aero4.value        = ""
+    form.aero5.value        = ""
+    form.cycle1.value       = ""
+    form.cycle2.value       = ""
+    form.circuit.value      = ""
+    form.row1.value         = ""
+    form.row2.value         = ""
+    form.ski1.value         = ""
+    form.stair1.value       = ""
+    form.weight1.value      = ""
+    form.weight2.value      = ""
+    form.basket1.value      = ""
+    form.basket2.value      = ""
+    form.cycle3.value       = ""
+    form.cycle4.value       = ""
+    form.cycle5.value       = ""
+    form.box1.value         = ""
+    form.foot1.value        = ""
+    form.foot2.value        = ""
+    form.frisbee.value      = ""
+    form.golf1.value        = ""
+    form.golf2.value        = ""
+    form.gymnast.value      = ""
+    form.hball.value        = ""
+    form.hike.value         = ""
+    form.horse.value        = ""
+    form.ice1.value         = ""
+    form.martial.value      = ""
+    form.rball1.value       = ""
+    form.rball2.value       = ""
+    form.climb1.value       = ""
+    form.climb2.value       = ""
+    form.roller1.value      = ""
+    form.rope.value         = ""
+    form.run1.value         = ""
+    form.run2.value         = ""
+    form.run3.value         = ""
+    form.run4.value         = ""
+    form.run5.value         = ""
+    form.run6.value         = ""
+    form.run7.value         = ""
+    form.run8.value         = ""
+    form.run9.value         = ""
+    form.ski2.value         = ""
+    form.ski3.value         = ""
+    form.snshoe.value       = ""
+    form.softball.value     = ""
+    form.swim1.value        = ""
+    form.tennis1.value      = ""
+    form.volley1.value      = ""
+    form.volley2.value      = ""
+    form.volley3.value      = ""
+    form.walk1.value        = ""
+    form.walk2.value        = ""
+    form.walk3.value        = ""
+    form.walk4.value        = ""
+    form.ski4.value         = ""
+    form.polo.value         = ""
+    form.whitewater.value   = ""
+    form.wood.value         = ""
+    form.garden.value       = ""
+    form.clean.value        = ""
+    form.mow1.value         = ""
+    form.mow2.value         = ""
+    form.snow1.value        = ""
+    form.games.value        = ""
+    form.lawn.value         = ""
+    form.sex.value          = ""
+    form.snow2.value        = ""
+    }
+    // end JavaScript -->
+    
+    
+    
+    
+    
+    
+    
+    
+    </script>
+    <div class ="ancalc">
+    
+      <FORM method=post>
+        
+          <TABLE>
+    <TR>
+      <th colSpan=4 class="top">Excercise Calorie Calculator</th>
+    </TR>
+    <TR>
+            <th colSpan=4>
+              Enter the following data</th>
+            </TR>
+            <TR>
+              <TD colSpan=4><TABLE>
+                  <TBODY>
+                    <TR>
+                      <TD>Weight (in lbs.):</TD>
+                      <TD>
+                          <INPUT size=3 value=20 name=weight>
+                        </TD>
+                      <TD>Time (in min.):</TD>
+                      <TD>
+                          <INPUT size=4 value=60 
+    name=minutes>
+                        </TD>
+                    </TR>
+                  </TBODY>
+                </TABLE></TD>
+            </TR>
+            <TR>
+              <TD colSpan=4><input onClick=compute(this.form); type=button value=" Calculate Calories Burned " name=SubmitName>
+                <input onClick=clearvalues(this.form); type=button value=" Clear And Start Again " name=clear></TD>
+            </TR>
+            <TR>
+              <th colSpan=4>Results </th>
+            </TR>
+            <TR>
+              <th colSpan=4 class="head">Gym 
+                and Home Activities</th>
+            </TR>
+            <TR>
+              <TD>Aerobics: low impact</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=53 name=aero1>
+                  
+                </TD>
+              <TD>Aerobics: high impact</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=67 name=aero2>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Aerobics, Step: low impact</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=67 name=aero4>
+                  
+                </TD>
+              <TD>Aerobics, Step: high impact</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=96 name=aero5>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Aerobics: water</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=38 name=aero3>
+                  
+                </TD>
+              <TD>Bicycling, Stationary: moderate</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=67 name=cycle1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Bicycling, Stationary: vigorous</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=101 name=cycle2>
+                  
+                </TD>
+              <TD>Circuit Training: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=circuit>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Rowing, Stationary: moderate</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=67 name=row1>
+                  
+                </TD>
+              <TD>Rowing, Stationary: vigorous</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=82 name=row2>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Ski Machine: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=91 name=ski1>
+                  
+                </TD>
+              <TD>Stair Step Machine: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=58 name=stair1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Weight Lifting: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=29 name=weight1>
+                  
+                </TD>
+              <TD>Weight Lifting: vigorous</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=58 name=weight2>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <th colSpan=4 class="head">Training 
+                Activities</th>
+            </TR>
+            <TR>
+              <TD>Basketball: playing a game</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=basket1>
+                  
+                </TD>
+              <TD>Basketball: wheelchair</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=62 name=basket2>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Bicycling: BMX or mountain</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=82 name=cycle3>
+                  
+                </TD>
+              <TD>Bicycling: 12-13.9 mph</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=cycle4>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Bicycling: 14-15.9 mph</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=96 name=cycle5>
+                  
+                </TD>
+              <TD>Boxing: sparring</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=86 name=box1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Football: competitive</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=86 name=foot1>
+                  
+                </TD>
+              <TD>Football: touch, flag, general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=foot2>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Frisbee</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=29 name=frisbee>
+                  
+                </TD>
+              <TD>Golf: carrying clubs</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=53 name=golf1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Golf: using cart</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=34 name=golf2>
+                  
+                </TD>
+              <TD>Gymnastics: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=38 name=gymnast>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Handball: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=115 name=hball>
+                  
+                </TD>
+              <TD>Hiking: cross-country</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=58 name=hike>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Horseback Riding: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=38 name=horse>
+                  
+                </TD>
+              <TD>Ice Skating: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=67 name=ice1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Martial Arts: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=96 name=martial>
+                  
+                </TD>
+              <TD>Racquetball: competitive</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=96 name=rball1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Racquetball: casual, general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=67 name=rball2>
+                  
+                </TD>
+              <TD>Rock Climbing: ascending</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=106 name=climb1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Rock Climbing: repelling</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=climb2>
+                  
+                </TD>
+              <TD>Rollerblade Skating</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=67 name=roller1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Rope Jumping</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=96 name=rope>
+                  
+                </TD>
+              <TD>Running: 5 mph (12 min/mile)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=run1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Running: 5.2 mph (11.5 min/mile)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=86 name=run2>
+                  
+                </TD>
+              <TD>Running: 6 mph (10 min/mile)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=96 name=run3>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Running: 6.7 mph (9 min/mile)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=106 name=run4>
+                  
+                </TD>
+              <TD>Running: 7.5 mph (8 min/mile)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=120 name=run5>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Running: 8.6 mph (7 min/mile)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=139 name=run6>
+                  
+                </TD>
+              <TD>Running: 10 mph (6 min/mile)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=158 name=run7>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Running: pushing wheelchair, marathon 
+                wheeling</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=run8>
+                  
+                </TD>
+              <TD>Running: cross-country</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=86 name=run9>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Skiing: cross-country</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=ski2>
+                  
+                </TD>
+              <TD>Skiing: downhill</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=58 name=ski3>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Snow Shoeing</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=snshoe>
+                  
+                </TD>
+              <TD>Softball: general play</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=48 name=softball>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Swimming: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=58 name=swim1>
+                  
+                </TD>
+              <TD>Tennis: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=67 name=tennis1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Volleyball: non-competitive,<BR>
+                general play</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=29 name=volley1>
+                  
+                </TD>
+              <TD>Volleyball: competitive, gymnasium 
+                play</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=38 name=volley2>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Volleyball: beach</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=77 name=volley3>
+                  
+                </TD>
+              <TD>Walk: 3.5 mph (17 min/mi)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=38 name=walk1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Walk: 4 mph (15 min/mi)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=43 name=walk2>
+                  
+                </TD>
+              <TD>Walk: 4.5 mph (13 min/mi)</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=48 name=walk3>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Walk/Jog: jog &lt;10 min.</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=58 name=walk4>
+                  
+                </TD>
+              <TD>Water Skiing</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=58 name=ski4>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Water Polo</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=96 name=polo>
+                  
+                </TD>
+              <TD>Whitewater: rafting, kayaking</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=48 name=whitewater>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <th colSpan=4 class="head">Daily 
+                Life Activities</th>
+            </TR>
+            <TR>
+              <TD>Chopping &amp; Splitting Wood</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=58 name=wood>
+                  
+                </TD>
+              <TD>Gardening: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=43 name=garden>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Housecleaning: general</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=34 name=clean>
+                  
+                </TD>
+              <TD>Mowing Lawn: push, hand</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=53 name=mow1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Mowing Lawn: push, power</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=43 name=mow2>
+                  
+                </TD>
+              <TD>Operate Snow Blower: walking</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=43 name=snow1>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Children's Games: 4-square, etc.</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=48 name=games>
+                  
+                </TD>
+              <TD>Raking Lawn</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=38 name=lawn>
+                  
+                </TD>
+            </TR>
+            <TR>
+              <TD>Sex: moderate effort</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=14 name=sex>
+                  
+                </TD>
+              <TD>Shoveling Snow: by hand</TD>
+              <TD>
+                  
+                  <INPUT size=8 value=58 
+    name=snow2>
+                  
+                </TD>
+            </TR>
+          </TABLE>
+        
+      </FORM>
+    
+    </div>
